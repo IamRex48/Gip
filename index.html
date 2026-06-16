@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Descarga la prueba oficial de La puerca está en la pocilga: dash & trash">
+    <meta name="author" content="Rex">
+    <title>DASH & TRASH - Descarga Directa</title>
+    
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            color: #ffffff;
+            background-color: #000000;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        header {
+            background-image: linear-gradient(135deg, rgba(221, 0, 93, 0.2) 0%, rgba(91, 234, 220, 0.2) 100%);
+            padding: 2rem 1rem;
+            border-bottom: 4px solid #dc005d;
+        }
+
+        .container {
+            width: 100%;
+            padding: 0 1rem;
+            margin: 0 auto;
+            max-width: 540px;
+        }
+
+        .brand-header {
+            margin: 2rem 0;
+            text-transform: uppercase;
+        }
+
+        .title-main {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #eebb16;
+            letter-spacing: 4px;
+            text-shadow: 3px 3px 0px #dc005d;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: #5beadc;
+            letter-spacing: 3px;
+        }
+
+        .download-section {
+            background: #0b0b0b;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 0 20px rgba(221, 0, 93, 0.1);
+        }
+
+        .section-title {
+            color: #dc005d;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .version-selector {
+            margin-bottom: 2.5rem;
+        }
+
+        .version-selector label {
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .select-style {
+            background-color: #222;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #eebb16;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 320px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .btn-download {
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            background-color: #eebb16;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #000000;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            box-shadow: 4px 4px 0px #dc005d;
+            transition: all 0.1s linear;
+        }
+
+        .btn-download:hover {
+            background-color: #5beadc;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #dc005d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="subtitle">FAST DOWNLOAD PROTOCOL</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="brand-header">
+            <div class="title-main">DASH & TRASH</div>
+            <div class="subtitle">La puerca está en la pocilga</div>
+        </div>
+
+        <main class="download-section">
+            <h2 class="section-title">Descarga Inmediata</h2>
+            
+            <div class="version-selector">
+                <label for="game-version">Elige tu sistema:</label>
+                <select id="game-version" class="select-style" onchange="updateDownloadLink()">
+                    <option value="pc">Windows PC (.zip)</option>
+                    <option value="android">Android (.apk)</option>
+                </select>
+            </div>
+
+            <a id="download-btn" href="/downloads/dash-and-trash-pc.zip" class="btn-download" download="dash-and-trash-pc.zip">
+                DESCARGAR AHORA
+            </a>
+        </main>
+    </div>
+
+    <script>
+        function updateDownloadLink() {
+            const selector = document.getElementById('game-version');
+            const downloadBtn = document.getElementById('download-btn');
+            const selectedVersion = selector.value;
+
+            if (selectedVersion === 'pc') {
+                downloadBtn.href = '/downloads/dash-and-trash-pc.zip';
+                downloadBtn.setAttribute('download', 'dash-and-trash-pc.zip');
+            } else if (selectedVersion === 'android') {
+                // Al presionar el botón se bajará directamente el archivo sin salir de la app
+                downloadBtn.href = '/downloads/dash-and-trash-android.apk';
+                downloadBtn.setAttribute('download', 'dash-and-trash-android.apk');
+            }
+        }
+    </script>
+</body>
+</html>
