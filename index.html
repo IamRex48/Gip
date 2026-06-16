@@ -7,7 +7,6 @@
     <meta name="author" content="Rex">
     <title>DASH & TRASH - Descarga la Prueba</title>
     
-    <!-- FUENTES REALES: Estilo Hotline Miami / Mullet MadJack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
@@ -233,9 +232,7 @@
 
     <div class="container">
         
-        <!-- BANNER GIF GIGANTE -->
         <div class="gif-banner-container">
-            <!-- Reemplaza "banner.gif" por el nombre de tu archivo GIF en tu carpeta local o un link directo -->
             <img src="sprite-animation.gif" alt="Dash & Trash Gameplay" class="gif-banner">
         </div>
 
@@ -255,8 +252,7 @@
                 </select>
             </div>
 
-            <!-- Descarga directa sin abrir pestaña -->
-            <a id="download-btn" href="downloads/dash-and-trash-pc.zip" class="btn-download" download="dash-and-trash-pc.zip">
+            <a id="download-btn" href="TU_LINK_DE_GITHUB_PARA_WINDOWS_AQUÍ" class="btn-download" download="dash-and-trash-pc.zip">
                 INICIAR DESCARGA
             </a>
         </main>
@@ -278,16 +274,20 @@
     </div>
 
     <script>
+        // Configuración de los servidores externos de más de 100MB
+        const urlPC = "TU_LINK_DE_GITHUB_PARA_WINDOWS_AQUÍ";
+        const urlAndroid = "TU_LINK_DE_GITHUB_PARA_ANDROID_AQUÍ";
+
         function updateDownloadLink() {
             const selector = document.getElementById('game-version');
             const downloadBtn = document.getElementById('download-btn');
             const selectedVersion = selector.value;
 
             if (selectedVersion === 'pc') {
-                downloadBtn.href = 'downloads/dash-and-trash-pc.zip';
+                downloadBtn.href = urlPC;
                 downloadBtn.setAttribute('download', 'dash-and-trash-pc.zip');
             } else if (selectedVersion === 'android') {
-                downloadBtn.href = 'downloads/dash-and-trash-android.apk';
+                downloadBtn.href = urlAndroid;
                 downloadBtn.setAttribute('download', 'dash-and-trash-android.apk');
             }
         }
