@@ -5,66 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Descarga la prueba oficial de La puerca está en la pocilga: dash & trash">
     <meta name="author" content="Rex">
-    <title>DASH & TRASH - Descarga Directa</title>
+    <title>DASH & TRASH - Descarga la Prueba</title>
+    
+    <!-- FUENTES REALES: Estilo Hotline Miami / Mullet MadJack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
     
     <style>
+        /* Paleta Hotline Miami: Rosa neón, Amarillo cianuro, Cian eléctrico */
+        :root {
+            --neon-pink: #dc005d;
+            --neon-cyan: #5beadc;
+            --neon-yellow: #eebb16;
+            --bg-dark: #000000;
+        }
+
         body {
             padding: 0;
             margin: 0;
             text-align: center;
             color: #ffffff;
-            background-color: #000000;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            font-family: 'Share Tech Mono', monospace;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
         }
 
+        /* Línea superior neón con animación de parpadeo */
         header {
-            background-image: linear-gradient(135deg, rgba(221, 0, 93, 0.2) 0%, rgba(91, 234, 220, 0.2) 100%);
-            padding: 2rem 1rem;
-            border-bottom: 4px solid #dc005d;
+            background-image: linear-gradient(135deg, rgba(221, 0, 93, 0.3) 0%, rgba(91, 234, 220, 0.3) 100%);
+            padding: 1.5rem 1rem;
+            border-bottom: 4px solid var(--neon-pink);
+            font-family: 'VT323', monospace;
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            color: var(--neon-cyan);
+            animation: neon-flicker 2s infinite alternate;
         }
 
         .container {
             width: 100%;
             padding: 0 1rem;
             margin: 0 auto;
-            max-width: 540px;
+            max-width: 768px; /* Un poco más ancho para el GIF */
+        }
+
+        /* BANNER GIF GIGANTE - Ocupa el ancho con estética VHS/Retro */
+        .gif-banner-container {
+            width: 100%;
+            margin-top: 2rem;
+            border: 4px solid var(--neon-pink);
+            box-shadow: 0 0 25px rgba(221, 0, 93, 0.5);
+            background-color: #111;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .gif-banner {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            filter: contrast(1.1) brightness(1.1);
         }
 
         .brand-header {
-            margin: 2rem 0;
-            text-transform: uppercase;
+            margin: 3rem 0;
         }
 
+        /* Fuente pesada, itálica y con doble sombra (Estilo Mullet MadJack / Hotline) */
         .title-main {
-            font-size: 2.2rem;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 3.5rem;
+            font-style: italic;
             font-weight: 900;
-            color: #eebb16;
-            letter-spacing: 4px;
-            text-shadow: 3px 3px 0px #dc005d;
+            color: var(--neon-yellow);
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            transform: skewX(-10deg);
+            line-height: 1;
             margin-bottom: 0.5rem;
+            text-shadow: 4px 4px 0px var(--neon-pink), -2px -2px 0px #000;
+        }
+
+        @media (max-width: 576px) {
+            .title-main { font-size: 2.2rem; }
         }
 
         .subtitle {
-            font-size: 0.8rem;
-            font-style: italic;
-            color: #5beadc;
-            letter-spacing: 3px;
+            font-family: 'VT323', monospace;
+            font-size: 1.8rem;
+            color: var(--neon-cyan);
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
+        /* Sección de descarga */
         .download-section {
-            background: #0b0b0b;
-            border: 2px solid #333;
-            border-radius: 8px;
+            background: #060606;
+            border: 3px dashed var(--neon-cyan);
             padding: 3rem 2rem;
             margin: 3rem 0;
-            box-shadow: 0 0 20px rgba(221, 0, 93, 0.1);
+            position: relative;
         }
 
         .section-title {
-            color: #dc005d;
-            font-size: 1.5rem;
+            font-family: 'VT323', monospace;
+            color: var(--neon-pink);
+            font-size: 2.5rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            margin-top: 0;
             margin-bottom: 2rem;
         }
 
@@ -74,73 +126,163 @@
 
         .version-selector label {
             display: block;
-            font-size: 0.9rem;
+            font-family: 'VT323', monospace;
+            font-size: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
         }
 
         .select-style {
-            background-color: #222;
+            background-color: #111;
             color: #fff;
+            font-family: 'Share Tech Mono', monospace;
             font-size: 1.1rem;
             padding: 0.8rem 1.5rem;
-            border: 2px solid #eebb16;
-            border-radius: 4px;
+            border: 2px solid var(--neon-yellow);
             width: 100%;
             max-width: 320px;
             cursor: pointer;
             outline: none;
+            text-transform: uppercase;
         }
 
+        .select-style:focus {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(91, 234, 220, 0.4);
+        }
+
+        /* Botón de acción masivo */
         .btn-download {
             display: inline-block;
             text-decoration: none;
             cursor: pointer;
             border: none;
-            background-color: #eebb16;
-            font-size: 1.1rem;
-            font-weight: bold;
+            background-color: var(--neon-yellow);
+            font-family: 'Archivo Black', sans-serif;
+            font-style: italic;
+            font-size: 1.3rem;
             text-transform: uppercase;
             color: #000000;
-            padding: 1rem 2.5rem;
-            border-radius: 4px;
-            box-shadow: 4px 4px 0px #dc005d;
-            transition: all 0.1s linear;
+            padding: 1.2rem 3rem;
+            box-shadow: 6px 6px 0px var(--neon-pink);
+            transition: all 0.1s ease;
         }
 
         .btn-download:hover {
-            background-color: #5beadc;
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px #dc005d;
+            background-color: var(--neon-cyan);
+            transform: translate(3px, 3px);
+            box-shadow: 3px 3px 0px var(--neon-pink);
+        }
+
+        .btn-download:active {
+            transform: translate(6px, 6px);
+            box-shadow: 0px 0px 0px var(--neon-pink);
+        }
+
+        /* Grid inferior */
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 4rem -1rem 1rem;
+            border-top: 2px solid #222;
+            padding-top: 2rem;
+        }
+
+        .feature-card {
+            padding: 1rem;
+            flex: 0 0 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        @media (min-width: 768px) {
+            .feature-card { flex: 0 0 50%; max-width: 50%; }
+        }
+
+        .feature-card h3 {
+            font-family: 'VT323', monospace;
+            text-align: left;
+            color: var(--neon-cyan);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            text-align: left;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+        }
+
+        footer {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            color: #555555;
+            margin: 5rem 0 3rem;
+            letter-spacing: 2px;
+        }
+
+        /* Animación Neón para simular pantalla Arcade rota */
+        @keyframes neon-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 4px var(--neon-cyan), 0 0 10px var(--neon-cyan);
+            }
+            20%, 24%, 55% {       
+                text-shadow: none;
+                color: #222;
+            }
         }
     </style>
 </head>
 <body>
 
-   
 
     <div class="container">
+        
+        <!-- BANNER GIF GIGANTE -->
+        <div class="gif-banner-container">
+            <!-- Reemplaza "banner.gif" por el nombre de tu archivo GIF en tu carpeta local o un link directo -->
+            <img src="sprite-animation.gif" alt="Dash & Trash Gameplay" class="gif-banner">
+        </div>
+
         <div class="brand-header">
-            <div class="title-main">DASH & TRASH</div>
+            <h1 class="title-main">DASH & TRASH</h1>
             <div class="subtitle">La puerca está en la pocilga</div>
         </div>
 
         <main class="download-section">
-            <h2 class="section-title">Descarga Inmediata</h2>
+            <h2 class="section-title">> CARGAR ARCHIVO</h2>
             
             <div class="version-selector">
-                <label for="game-version">Elige tu sistema:</label>
+                <label for="game-version">SELECCIONA ENTORNO:</label>
                 <select id="game-version" class="select-style" onchange="updateDownloadLink()">
-                    <option value="pc">Windows PC (.zip)</option>
-                    <option value="android">Android (.apk)</option>
+                    <option value="pc">PC WINDOWS (.ZIP)</option>
+                    <option value="android">ANDROID (.APK)</option>
                 </select>
             </div>
 
-            <a id="download-btn" href="/downloads/dash-and-trash-pc.zip" class="btn-download" download="dash-and-trash-pc.zip">
-                DESCARGAR AHORA
+            <!-- Descarga directa sin abrir pestaña -->
+            <a id="download-btn" href="downloads/dash-and-trash-pc.zip" class="btn-download" download="dash-and-trash-pc.zip">
+                INICIAR DESCARGA
             </a>
         </main>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <h3>[ ACCIÓN INMEDIATA ]</h3>
+                <p>Mecánicas rápidas de esquiva y recolección. Limpia los niveles de la pocilga antes de que el temporizador explote en tu cara.</p>
+            </div>
+            <div class="feature-card">
+                <h3>[ ESTÉTICA AGRESIVA ]</h3>
+                <p>Inspirado directamente por la brutalidad visual cyberpunk de los shooters de alta velocidad y la música electrónica distorsionada.</p>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 Niggames
+        </footer>
     </div>
 
     <script>
@@ -150,11 +292,10 @@
             const selectedVersion = selector.value;
 
             if (selectedVersion === 'pc') {
-                downloadBtn.href = '/downloads/dash-and-trash-pc.zip';
+                downloadBtn.href = 'downloads/dash-and-trash-pc.zip';
                 downloadBtn.setAttribute('download', 'dash-and-trash-pc.zip');
             } else if (selectedVersion === 'android') {
-                // Al presionar el botón se bajará directamente el archivo sin salir de la app
-                downloadBtn.href = '/downloads/dash-and-trash-android.apk';
+                downloadBtn.href = 'downloads/dash-and-trash-android.apk';
                 downloadBtn.setAttribute('download', 'dash-and-trash-android.apk');
             }
         }
